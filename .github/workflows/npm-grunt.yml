@@ -22,7 +22,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
-      run: |
-        npm install
-        grunt
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build with Grunt
+      run: grunt
+
+    - name: Deploy to Heroku
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      uses: akshnz/heroku-deploy@v3.0.0
+      with:
+        api-key: ${{ secrets.HEROKU_API_KEY }}
+        app-name: ${{ secrets.HEROKU_APP_NAME }}
