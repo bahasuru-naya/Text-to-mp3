@@ -1,5 +1,7 @@
 # Text to MP3 Converter
 
+<img width="995" height="886" alt="image" src="https://github.com/user-attachments/assets/b8e8dd8b-8935-4696-974b-1ac6c9771ed1" />
+
 A lightweight Node.js + Express web app that converts any text into a downloadable MP3 audio file using text-to-speech.
 
 ## Features
